@@ -36,7 +36,8 @@ def get_token(client_id, client_secret, tenant_id, authority_url, scope):
     return result.get('access_token')
 
 def get_header(token):
-    return {'Authorization': f'Bearer {token}'} 
+    return {'Authorization': f'Bearer {token}',
+            'Content-type': 'application/json'} 
 
 
 def call_API(end_point, headers):
